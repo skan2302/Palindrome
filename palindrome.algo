@@ -1,0 +1,14 @@
+//If the string is made of no letters or just one letter, then it is a palindrome.
+//Otherwise, compare the first and last letters of the string.
+//If the first and last letters differ, then the string is not a palindrome.
+//Otherwise, the first and last letters are the same. Strip them from the string, and determine whether the string that remains is a palindrome. Take the answer for this smaller string and use it as the answer for the original string.
+FUNCTION is_palindrome(s : STRING[50], start,end : INTEGER) : BOOLEAN
+BEGIN
+    IF (start >= end) THEN
+        RETURN TRUE;
+    ELSE_IF (s[start] = s[end]) THEN
+        RETURN is_palindrome(s, start +1, end -1);
+    ELSE
+        RETURN FALSE
+    END_IF
+END
